@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+pontinho.db
+.venv/
+data/
+*.db-journal

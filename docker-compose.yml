@@ -1,0 +1,22 @@
+services:
+  pontinho:
+    build: .
+    image: pontinho:latest
+    container_name: pontinho
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      PONTINHO_DB: /app/data/pontinho.db
+      TZ: America/Sao_Paulo
+    volumes:
+      - pontinho_data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:5000/api/ranking',timeout=3).status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  pontinho_data:

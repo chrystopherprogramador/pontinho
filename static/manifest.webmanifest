@@ -1,0 +1,12 @@
+{
+    "name": "Pontinho Vegas",
+    "short_name": "Pontinho",
+    "description": "Placar de Pontinho estilo Vegas com ranking global",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#ffd700",
+    "icons": [
+        { "src": "/static/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    ]
+}
